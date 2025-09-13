@@ -3,67 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <title>Stock Price Predictor</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background: linear-gradient(to right, #e0f7fa, #e1bee7);
-        font-family: 'Segoe UI', sans-serif;
-      }
-      .card {
-        border: none;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      }
-      .card > h2 {
-        font-size: clamp(1rem, 5vw, 2.5rem);
-      }
-      .btn-primary {
-        background-color: #6a1b9a;
-        border: none;
-      }
-      .btn-primary:hover {
-        background-color: #4a148c;
-      }
-      .label-custom {
-        font-size: clamp(0.7rem, 4vw, 1.5rem);
-      }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="container mt-5">
-      <div class="card p-4">
-        <h2 class="text-center mb-4">📈 Predict Stock Close Price</h2>
-        <form action="/predictprice" method="post">
-          <div class="mb-3">
-            <label for="Open" class="form-label label-custom">Open Price</label>
+  <body
+    class="flex items-center justify-center min-h-screen px-4 bg-gradient-to-r from-cyan-100 to-purple-100 font-sans"
+  >
+    <div
+      class="w-3/4 bg-white rounded-xl shadow-lg p-6 hover:shadow-purple-500"
+    >
+      <h2
+        class="text-center mb-6 font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+      >
+        📈 Predict Stock Close Price
+      </h2>
+
+      <form action="/predictprice" method="post" class="w-full space-y-4">
+        <div class="flex justify-center flex-wrap gap-10">
+          <div>
+            <label
+              for="Open"
+              class="block font-medium text-sm sm:text-base md:text-lg lg:text-xl"
+            >
+              Open Price
+            </label>
             <input
+              placeholder="Enter Open Price"
               type="number"
               step="any"
-              class="form-control input-custom"
               id="Open"
               name="Open"
               required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
-          <div class="mb-3">
-            <label for="Volume" class="form-label label-custom">Volume</label>
+
+          <div>
+            <label
+              for="Volume"
+              class="block font-medium text-sm sm:text-base md:text-lg lg:text-xl"
+            >
+              Volume
+            </label>
             <input
+              placeholder="Enter Volumn"
               type="number"
               step="any"
-              class="form-control input-custom"
               id="Volume"
               name="Volume"
               required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
-          <button type="submit" class="btn btn-primary w-100">
+        </div>
+        <div class="flex justify-center">
+          <button
+            type="submit"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
             🚀 Predict
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>
